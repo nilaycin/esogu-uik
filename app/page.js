@@ -88,28 +88,28 @@ const focusAreas = [
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col justify-between">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden flex flex-col justify-between">
       
-      {/* 1. ARKA PLAN GÖRSELİ (Mobilde Üste Hizalı ve Tam Kapsayan Ayar) */}
-      <div className="absolute inset-0 -z-20 w-full h-full">
+      {/* 1. ARKA PLAN GÖRSELİ (Mobilde uçakları ve detayları gösteren ayar) */}
+      <div className="absolute inset-0 -z-20 w-full h-[580px] sm:h-full overflow-hidden">
         <Image
           src="/arkaplan.png"
           alt="Arka Plan"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top sm:object-center opacity-85"
+          className="object-contain sm:object-cover object-top opacity-90"
         />
       </div>
 
-      {/* 2. YAZILARIN OKUNMASINI SAĞLAYAN BEYAZ PERDE */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/60 to-white/95 -z-10" />
+      {/* 2. DAHA HAFİF BEYAZ PERDE (Uçak ve çizim detayları net görünsün) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white -z-10 pointer-events-none" />
 
       {/* 3. SAYFA İÇERİĞİ */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-20 relative z-10 w-full">
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-8 sm:pt-14 pb-20 relative z-10 box-border">
         
         {/* HERO ALANI */}
-        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           
           {/* Kulüp Logosu */}
           <div className="flex justify-center mb-5 sm:mb-6">

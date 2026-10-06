@@ -17,37 +17,37 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80">
-      <div className="max-w-8xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-slate-200/80">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4 box-border">
         
-        {/* Sol Alan: Üç Çizgi Butonu + Logo + Üniversite/Kulüp İsmi */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        {/* Sol Alan: Mobil Menü Butonu + Logo + Okul/Kulüp İsmi */}
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           
-          {/* Mobil Menü Butonu (Logonun solunda, sadece mobilde görünür) */}
+          {/* Mobil Menü Butonu (Logonun hemen solunda, sadece mobilde çıkar) */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 -ml-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none"
+            className="lg:hidden p-1.5 -ml-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
             aria-label="Menüyü Aç"
           >
             {isOpen ? (
-              // Açıkken Çarpı (X) İkonu
+              // Açıkken Çarpı (X)
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              // Kapalıyken 3 Çizgi İkonu
+              // Kapalıyken 3 Çizgi
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
 
-          {/* Logo & Yazılar */}
+          {/* Logo ve İsimler */}
           <Link href="/" className="flex items-center gap-1 group">
             <img
               src="/logo.png"
               alt="ESOGÜ UİK Logo"
-              className="w-16 h-16 sm:w-26 sm:h-26 object-contain group-hover:scale-105 transition-transform shrink-0"
+              className="w-14 h-14 sm:w-24 sm:h-24 object-contain group-hover:scale-105 transition-transform shrink-0"
             />
 
             <div className="flex flex-col">
@@ -88,9 +88,9 @@ export default function Navbar() {
 
       </div>
 
-      {/* Mobilde Açılan Menü */}
+      {/* Mobilde Tıklanınca Açılan Menü */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-4 flex flex-col gap-2 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden w-full bg-white border-b border-slate-200 px-6 py-4 flex flex-col gap-2 shadow-lg animate-in slide-in-from-top-2 duration-200">
           {navLinks.map((link) => (
             <Link
               key={link.href}
