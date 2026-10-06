@@ -1,69 +1,200 @@
+import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+const focusAreas = [
+  {
+    title: "Eğitim",
+    desc: "Seminerler, paneller, workshoplar ve daha fazlası.",
+    tag: "Akademik",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-8 h-8 text-[#0c2340]"
+      >
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Sosyal Sorumluluk",
+    desc: "Topluma fayda sağlayan projeler ve farkındalık çalışmaları.",
+    tag: "Toplum",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-8 h-8 text-[#0c2340]"
+      >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Uluslararası İlişkiler",
+    desc: "Dünya gündemi, diplomasi ve küresel meseleler.",
+    tag: "Diplomasi",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-8 h-8 text-[#0c2340]"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Kulüp & Sosyal Yaşam",
+    desc: "Etkinlikler, buluşmalar ve güçlü bir topluluk.",
+    tag: "Topluluk",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-8 h-8 text-[#0c2340]"
+      >
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
+        <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+      </svg>
+    ),
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="relative min-h-[calc(100vh-5rem)] overflow-hidden">
+      
+      {/* 1. ARKA PLAN GÖRSELİ (GARANTİLİ YÖNTEM) */}
+      <div className="absolute inset-0 -z-20">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/arkaplan.png"
+          alt="Arka Plan"
+          fill
           priority
+          className="object-cover object-center opacity-80"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
+      </div>
+
+      {/* 2. YAZILARIN OKUNMASINI SAĞLAYAN HAFİF BEYAZ PERDE */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/50 to-white/80 -z-10" />
+
+      {/* 3. SAYFA İÇERİĞİ */}
+      <div className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
+        
+        {/* HERO ALANI */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          
+          {/* Kulüp Logosu */}
+          <div className="flex justify-center mb-6">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 relative rounded-full p-1 bg-white shadow-xs border border-slate-200/80 flex items-center justify-center">
+              <img
+                src="/logo.png"
+                alt="ESOGÜ Uluslararası İlişkiler Kulübü Logosu"
+                className="w-full h-full object-contain rounded-full"
+              />
+            </div>
+          </div>
+
+          {/* Üniversite İsmi */}
+          <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-widest mb-2">
+            Eskişehir Osmangazi Üniversitesi
+          </p>
+
+          {/* Kulüp İsmi */}
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0c2340] tracking-tight leading-tight mb-5">
+            Uluslararası İlişkiler Kulübü
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+
+          {/* Slogan */}
+          <p className="text-xl sm:text-3xl font-extrabold text-[#0c2340] tracking-tight leading-snug">
+            “Dünya gündemini konuşuyoruz, <br />
+            <span className="text-blue-600">bugün gündem sensin.</span>”
+          </p>
+
+          {/* Butonlar */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <Link
+              href="/hakkimizda"
+              className="px-7 py-3 rounded-full bg-[#0c2340] hover:bg-blue-900 text-white font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center gap-2"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              <span>Kulübü Keşfet</span>
+              <span>→</span>
+            </Link>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfpMycj63sG9tCjibFdUjaSStAGh7vYcy-uywwYRpW9laHQ6g/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3 rounded-full bg-white border border-slate-300 hover:border-slate-800 text-slate-700 font-semibold text-sm transition-all duration-200 flex items-center gap-2 shadow-2xs"
             >
-              Learning
-            </a>{" "}
-            center.
+              <span>Bize Katıl</span>
+              <span className="text-slate-400">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* MOTTO */}
+        <div className="border-t border-slate-200/80 pt-10 mb-14 text-center max-w-2xl mx-auto">
+          <p className="text-2xl sm:text-3xl font-extrabold text-[#0c2340] leading-snug">
+            Farklı bakış açıları, <br />
+            Daha geniş ufuklar, <br />
+            <span className="text-blue-600">Daha güçlü yarınlar.</span>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* 4 ODAK KARTI */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {focusAreas.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/90 backdrop-blur-xs rounded-2xl p-6 border border-slate-150 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 text-center"
+            >
+              <div>
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center group-hover:scale-110 group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-300">
+                  {item.icon}
+                </div>
+
+                <h3 className="font-bold text-lg text-[#0c2340] mb-2 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+
+            
+            </div>
+          ))}
         </div>
-      </main>
+
+      </div>
     </div>
   );
 }
