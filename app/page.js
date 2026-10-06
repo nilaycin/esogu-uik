@@ -88,32 +88,31 @@ const focusAreas = [
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden flex flex-col justify-between">
+    <div className="relative min-h-screen w-full overflow-x-hidden flex flex-col justify-between">
       
-      {/* 1. ARKA PLAN GÖRSELİ (Mobilde uçakları ve detayları gösteren ayar) */}
-      <div className="absolute inset-0 -z-20 w-full h-[580px] sm:h-full overflow-hidden">
+      {/* 1. ARKA PLAN GÖRSELİ (Sağda-solda sıfır boşluk, tepeye hizalı tam yayılma) */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[680px] sm:h-full -z-20 overflow-hidden">
         <Image
           src="/arkaplan.png"
           alt="Arka Plan"
           fill
           priority
           sizes="100vw"
-          className="object-contain sm:object-cover object-top opacity-90"
+          className="object-cover object-top opacity-90"
         />
+        {/* Yazıların okunması için aşağı doğru eriyen perde */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
       </div>
 
-      {/* 2. DAHA HAFİF BEYAZ PERDE (Uçak ve çizim detayları net görünsün) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/50 to-white -z-10 pointer-events-none" />
-
-      {/* 3. SAYFA İÇERİĞİ */}
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-8 sm:pt-14 pb-20 relative z-10 box-border">
+      {/* 2. SAYFA İÇERİĞİ */}
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-14 pb-20 relative z-10 box-border">
         
         {/* HERO ALANI */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           
           {/* Kulüp Logosu */}
-          <div className="flex justify-center mb-5 sm:mb-6">
-            <div className="w-20 h-20 sm:w-28 sm:h-28 relative rounded-full p-1 bg-white shadow-xs border border-slate-200/80 flex items-center justify-center">
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <div className="w-20 h-20 sm:w-28 sm:h-28 relative rounded-full p-1 bg-white/95 shadow-sm border border-slate-200/80 flex items-center justify-center">
               <img
                 src="/logo.png"
                 alt="ESOGÜ Uluslararası İlişkiler Kulübü Logosu"
@@ -123,7 +122,7 @@ export default function HomePage() {
           </div>
 
           {/* Üniversite İsmi */}
-          <p className="text-[11px] sm:text-sm font-semibold text-slate-500 uppercase tracking-widest mb-2">
+          <p className="text-[11px] sm:text-sm font-bold text-slate-600 uppercase tracking-widest mb-2 drop-shadow-2xs">
             Eskişehir Osmangazi Üniversitesi
           </p>
 
@@ -152,7 +151,7 @@ export default function HomePage() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfpMycj63sG9tCjibFdUjaSStAGh7vYcy-uywwYRpW9laHQ6g/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white border border-slate-300 hover:border-slate-800 text-slate-700 font-semibold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 shadow-2xs"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white/90 backdrop-blur-xs border border-slate-300 hover:border-slate-800 text-slate-700 font-semibold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 shadow-2xs"
             >
               <span>Bize Katıl</span>
               <span className="text-slate-400">→</span>
@@ -168,6 +167,8 @@ export default function HomePage() {
             <span className="text-blue-600">Daha güçlü yarınlar.</span>
           </p>
         </div>
+
+        
 
         {/* 4 ODAK KARTI */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
