@@ -1,36 +1,36 @@
 const galleryItems = [
   {
-    src: "/galeri/galeri1.jpg",
+    src: "/galeri/galeri1.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Söyleşi",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri2.jpg",
+    src: "/galeri/galeri2.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri3.jpg",
+    src: "/galeri/galeri3.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri4.jpg",
+    src: "/galeri/galeri4.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri5.jpg",
+    src: "/galeri/galeri5.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri6.jpg",
+    src: "/galeri/galeri6.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
