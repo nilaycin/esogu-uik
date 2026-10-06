@@ -88,31 +88,32 @@ const focusAreas = [
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-[calc(100vh-5rem)] overflow-hidden">
+    <div className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col justify-between">
       
-      {/* 1. ARKA PLAN GÖRSELİ (GARANTİLİ YÖNTEM) */}
-      <div className="absolute inset-0 -z-20">
+      {/* 1. ARKA PLAN GÖRSELİ (Mobilde Üste Hizalı ve Tam Kapsayan Ayar) */}
+      <div className="absolute inset-0 -z-20 w-full h-full">
         <Image
           src="/arkaplan.png"
           alt="Arka Plan"
           fill
           priority
-          className="object-cover object-center opacity-80"
+          sizes="100vw"
+          className="object-cover object-top sm:object-center opacity-85"
         />
       </div>
 
-      {/* 2. YAZILARIN OKUNMASINI SAĞLAYAN HAFİF BEYAZ PERDE */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/50 to-white/80 -z-10" />
+      {/* 2. YAZILARIN OKUNMASINI SAĞLAYAN BEYAZ PERDE */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/60 to-white/95 -z-10" />
 
       {/* 3. SAYFA İÇERİĞİ */}
-      <div className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-20 relative z-10 w-full">
         
         {/* HERO ALANI */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
           
           {/* Kulüp Logosu */}
-          <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 relative rounded-full p-1 bg-white shadow-xs border border-slate-200/80 flex items-center justify-center">
+          <div className="flex justify-center mb-5 sm:mb-6">
+            <div className="w-20 h-20 sm:w-28 sm:h-28 relative rounded-full p-1 bg-white shadow-xs border border-slate-200/80 flex items-center justify-center">
               <img
                 src="/logo.png"
                 alt="ESOGÜ Uluslararası İlişkiler Kulübü Logosu"
@@ -122,26 +123,26 @@ export default function HomePage() {
           </div>
 
           {/* Üniversite İsmi */}
-          <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-widest mb-2">
+          <p className="text-[11px] sm:text-sm font-semibold text-slate-500 uppercase tracking-widest mb-2">
             Eskişehir Osmangazi Üniversitesi
           </p>
 
           {/* Kulüp İsmi */}
-          <h1 className="text-3xl sm:text-5xl font-black text-[#0c2340] tracking-tight leading-tight mb-5">
+          <h1 className="text-2xl sm:text-5xl font-black text-[#0c2340] tracking-tight leading-tight mb-4 sm:mb-5">
             Uluslararası İlişkiler Kulübü
           </h1>
 
           {/* Slogan */}
-          <p className="text-xl sm:text-3xl font-extrabold text-[#0c2340] tracking-tight leading-snug">
+          <p className="text-lg sm:text-3xl font-extrabold text-[#0c2340] tracking-tight leading-snug px-2">
             “Dünya gündemini konuşuyoruz, <br />
             <span className="text-blue-600">bugün gündem sensin.</span>”
           </p>
 
           {/* Butonlar */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
             <Link
               href="/hakkimizda"
-              className="px-7 py-3 rounded-full bg-[#0c2340] hover:bg-blue-900 text-white font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center gap-2"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#0c2340] hover:bg-blue-900 text-white font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center gap-2"
             >
               <span>Kulübü Keşfet</span>
               <span>→</span>
@@ -151,7 +152,7 @@ export default function HomePage() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfpMycj63sG9tCjibFdUjaSStAGh7vYcy-uywwYRpW9laHQ6g/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3 rounded-full bg-white border border-slate-300 hover:border-slate-800 text-slate-700 font-semibold text-sm transition-all duration-200 flex items-center gap-2 shadow-2xs"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white border border-slate-300 hover:border-slate-800 text-slate-700 font-semibold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 shadow-2xs"
             >
               <span>Bize Katıl</span>
               <span className="text-slate-400">→</span>
@@ -160,8 +161,8 @@ export default function HomePage() {
         </div>
 
         {/* MOTTO */}
-        <div className="border-t border-slate-200/80 pt-10 mb-14 text-center max-w-2xl mx-auto">
-          <p className="text-2xl sm:text-3xl font-extrabold text-[#0c2340] leading-snug">
+        <div className="border-t border-slate-200/80 pt-8 sm:pt-10 mb-12 sm:mb-14 text-center max-w-2xl mx-auto px-4">
+          <p className="text-xl sm:text-3xl font-extrabold text-[#0c2340] leading-snug">
             Farklı bakış açıları, <br />
             Daha geniş ufuklar, <br />
             <span className="text-blue-600">Daha güçlü yarınlar.</span>
@@ -169,18 +170,18 @@ export default function HomePage() {
         </div>
 
         {/* 4 ODAK KARTI */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {focusAreas.map((item, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-xs rounded-2xl p-6 border border-slate-150 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 text-center"
+              className="bg-white/90 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-slate-150 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 text-center"
             >
               <div>
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center group-hover:scale-110 group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-300">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-xl bg-slate-50 border border-slate-150 flex items-center justify-center group-hover:scale-110 group-hover:border-blue-200 group-hover:bg-blue-50/50 transition-all duration-300">
                   {item.icon}
                 </div>
 
-                <h3 className="font-bold text-lg text-[#0c2340] mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-bold text-base sm:text-lg text-[#0c2340] mb-1.5 sm:mb-2 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
 
@@ -188,8 +189,6 @@ export default function HomePage() {
                   {item.desc}
                 </p>
               </div>
-
-            
             </div>
           ))}
         </div>
