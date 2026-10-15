@@ -7,38 +7,36 @@ export default function HakkimizdaPage() {
         <h1 className="text-4xl sm:text-5xl font-black text-[#0c2340] mt-3 tracking-tight">
           Hakkımızda
         </h1>
-        <p className="text-xl font-bold text-slate-700 mt-4 leading-snug">
-          “Farklı bakış açıları, daha geniş ufuklar,{" "}
-          <span className="text-blue-600">daha güçlü yarınlar.</span>”
+        <p className="text-base sm:text-xl font-semibold text-slate-600 mt-4 leading-snug max-w-2xl mx-auto">
+          Farklı bakış açıları, daha geniş ufuklar,
+          daha güçlü yarınlar.
         </p>
       </div>
 
-      {/* 1. ÜSTTEKİ DİKDÖRTGEN KUTU: BİZ KİMİZ? (Animasyonlu) */}
-      <div className="group relative bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 ease-out hover:-translate-y-1 mb-8 overflow-hidden">
-        {/* Hover Arka Plan Işık Efekti */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/40 rounded-full blur-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+      {/* 1. ÜSTTEKİ DİKDÖRTGEN KUTU: BİZ KİMİZ? */}
+      <div className="group relative bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all duration-300 mb-8 overflow-hidden">
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/70 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-50 group-hover:border-blue-200 transition-all duration-300">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6 text-[#0c2340] group-hover:text-blue-600 transition-colors"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
+           
+           {/* İkon Kutusu: İkon rengi sabit lacivert, sadece dış çerçeve hover anında mavi olur */}
+<div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/90 group-hover:border-blue-400 group-hover:bg-blue-50/40 transition-colors duration-300 flex items-center justify-center shrink-0">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-6 text-[#0c2340]"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+</div>
             <div>
-              
-              <h2 className="text-3xl font-black text-[#0c2340] group-hover:text-blue-600 transition-colors">
+              <h2 className="text-4xl font-black text-[#0c2340]">
                 Biz Kimiz?
               </h2>
             </div>
@@ -61,25 +59,24 @@ export default function HakkimizdaPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Vizyonumuz */}
-        <div className="group relative bg-white rounded-2xl p-7 border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 ease-out hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
+        <div className="group relative bg-white rounded-3xl p-8 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div className="relative z-10">
-            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/70 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-50 group-hover:border-blue-200 transition-all duration-300">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6 text-[#0c2340] group-hover:text-blue-600 transition-colors"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-            </div>
+            {/* İkon Kutusu */}
+<div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/90 group-hover:border-blue-400 group-hover:bg-blue-50/40 transition-colors duration-300 flex items-center justify-center mb-5 shrink-0">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-6 text-[#0c2340]"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+</div>
 
         
             <h3 className="text-xl font-extrabold text-[#0c2340] mb-3 group-hover:text-blue-600 transition-colors">
@@ -92,24 +89,24 @@ export default function HakkimizdaPage() {
         </div>
 
         {/* Misyonumuz */}
-        <div className="group relative bg-white rounded-2xl p-7 border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-300 transition-all duration-300 ease-out hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+        <div className="group relative bg-white rounded-3xl p-8 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div className="relative z-10">
-            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/70 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-50 group-hover:border-blue-200 transition-all duration-300">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6 text-[#0c2340] group-hover:text-blue-600 transition-colors"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
-              </svg>
-            </div>
+            {/* İkon Kutusu */}
+<div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/90 group-hover:border-blue-400 group-hover:bg-blue-50/40 transition-colors duration-300 flex items-center justify-center mb-5 shrink-0">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-6 h-6 text-[#0c2340]"
+  >
+    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+    <path d="M2 17l10 5 10-5" />
+    <path d="M2 12l10 5 10-5" />
+  </svg>
+</div>
 
             
             <h3 className="text-xl font-extrabold text-[#0c2340] mb-3 group-hover:text-blue-600 transition-colors">

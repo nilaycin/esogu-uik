@@ -1,24 +1,24 @@
 const galleryItems = [
   {
-    src: "/galeri/galeri1.JPG",
-    title: "Stantlarımızdan Fotoğraflar",
+    src: "/galeri/tanismatoplantisi-1.JPG",
+    title: "Tanışma Toplantımızdan Fotoğraflar",
     category: "Söyleşi",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri2.JPG",
-    title: "Stantlarımızdan Fotoğraflar",
+    src: "/galeri/tanismatoplantisi-2.JPG",
+    title: "Tanışma Toplantımızdan Fotoğraflar",
     
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri3.JPG",
-    title: "Stantlarımızdan Fotoğraflar",
+    src: "/galeri/tanismatoplantisi-3.JPG",
+    title: "Tanışma Toplantımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
   },
   {
-    src: "/galeri/galeri4.JPG",
+    src: "/galeri/galeri2.JPG",
     title: "Stantlarımızdan Fotoğraflar",
     category: "Sosyal",
     date: "Ekim 2026",
@@ -46,9 +46,9 @@ export default function GaleriPage() {
         <h1 className="text-4xl sm:text-5xl font-black text-[#0c2340] mt-3 tracking-tight">
           Galeri
         </h1>
-        <p className="text-xl font-bold text-slate-700 mt-4 leading-snug">
-          “Birlikte ürettiğimiz, tartıştığımız ve{" "}
-          <span className="text-blue-600">paylaştığımız anlar.</span>”
+        <p className="text-base sm:text-xl font-semibold text-slate-600 mt-4 leading-snug max-w-2xl mx-auto">
+          Birlikte ürettiğimiz, tartıştığımız ve
+          paylaştığımız anlar.
         </p>
       </div>
 

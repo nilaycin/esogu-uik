@@ -43,9 +43,9 @@ const focusAreas = [
     ),
   },
   {
-    title: "Uluslararası İlişkiler",
-    desc: "Dünya gündemi, diplomasi ve küresel meseleler.",
-    tag: "Diplomasi",
+    title: "Kültür & Sanat",
+    desc: "Geziler, atölyeler ve kültürel etkileşim etkinlikleri.",
+    tag: "Kültür",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -57,15 +57,15 @@ const focusAreas = [
         className="w-8 h-8 text-[#0c2340]"
       >
         <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+        <path d="M2 12h20" />
       </svg>
     ),
   },
   {
-    title: "Kulüp & Sosyal Yaşam",
-    desc: "Etkinlikler, buluşmalar ve güçlü bir topluluk.",
-    tag: "Topluluk",
+    title: "Kariyer & Ağ",
+    desc: "Sektör buluşmaları, mezun söyleşileri ve staj imkanları.",
+    tag: "Kariyer",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -76,11 +76,8 @@ const focusAreas = [
         strokeLinejoin="round"
         className="w-8 h-8 text-[#0c2340]"
       >
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-        <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+        <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
       </svg>
     ),
   },
@@ -90,7 +87,7 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden flex flex-col justify-between">
       
-      {/* 1. ARKA PLAN GÖRSELİ (Sağda-solda sıfır boşluk, tepeye hizalı tam yayılma) */}
+      {/* 1. ARKA PLAN GÖRSELİ */}
       <div className="absolute top-0 left-0 right-0 w-full h-[680px] sm:h-full -z-20 overflow-hidden">
         <Image
           src="/arkaplan.png"
@@ -100,7 +97,6 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover object-top opacity-90"
         />
-        {/* Yazıların okunması için aşağı doğru eriyen perde */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
       </div>
 
@@ -158,17 +154,6 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-
-        {/* MOTTO */}
-        <div className="border-t border-slate-200/80 pt-8 sm:pt-10 mb-12 sm:mb-14 text-center max-w-2xl mx-auto px-4">
-          <p className="text-xl sm:text-3xl font-extrabold text-[#0c2340] leading-snug">
-            Farklı bakış açıları, <br />
-            Daha geniş ufuklar, <br />
-            <span className="text-blue-600">Daha güçlü yarınlar.</span>
-          </p>
-        </div>
-
-        
 
         {/* 4 ODAK KARTI */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

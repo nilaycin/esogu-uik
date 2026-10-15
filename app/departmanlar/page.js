@@ -94,8 +94,8 @@ export default function DepartmanlarPage() {
         <h1 className="text-4xl sm:text-5xl font-black text-[#0c2340] mt-3 tracking-tight">
           Departmanlarımız
         </h1>
-        <p className="text-xl font-bold text-slate-700 mt-4 leading-snug">
-          “Fikir üret, geliş, <span className="text-blue-600">birlikte etki oluştur.</span>”
+        <p className="text-base sm:text-xl font-semibold text-slate-600 mt-4 leading-snug max-w-2xl mx-auto">
+          Fikir üret, geliş, birlikte etki oluştur.
         </p>
       </div>
 

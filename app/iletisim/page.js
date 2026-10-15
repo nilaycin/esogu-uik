@@ -76,8 +76,8 @@ export default function IletisimPage() {
         <h1 className="text-4xl sm:text-5xl font-black text-[#0c2340] tracking-tight">
           İletişim
         </h1>
-        <p className="text-xl font-bold text-slate-700 mt-4 leading-snug">
-          “Soruların, fikirlerin veya <span className="text-blue-600">iş birliklerin için bize ulaş.</span>”
+        <p className="text-base sm:text-xl font-semibold text-slate-600 mt-4 leading-snug max-w-2xl mx-auto">
+          Soruların, fikirlerin veya iş birliklerin için bize ulaş.
         </p>
       </div>
 

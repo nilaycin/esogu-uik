@@ -1,196 +1,201 @@
-// 1. Departman Başkanları Verisi
-const departmentHeads = [
+import Link from "next/link";
+
+const baskanlar = [
   {
-    name: "Hayal Aktaş",
-    role: "Eğitim ve Sosyal Sorumluluk Departmanı",
-    email: "hayalyaktas@gmail.com",
-    avatarBg: "bg-blue-50 text-blue-700 border-blue-200",
+    name: "Havva Kandak",
+    
+    department: "Genel Başkan",
+    email: "havvakandak@hotmail.com",
+    image: "/yonetim/havvakandak.png",
+    initials: "HK",
   },
   {
-    name: "Sıla Kaya",
-    role: "Mali İşler ve Sponsorluk Departmanı",
-    email: "sila.kaya0354@gmail.com",
-    avatarBg: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  },
-  {
-    name: "Irmak Paköz",
-    role: "Sosyal Medya ve Tanıtım Departmanı",
-    email: "vpakoz.6516@gmail.com",
-    avatarBg: "bg-purple-50 text-purple-700 border-purple-200",
-  },
-  {
-    name: "Beyza Bakar",
-    role: "İdari İşler ve İnsan Kaynakları Departmanı",
-    email: "beyzabakar33@gmail.com",
-    avatarBg: "bg-amber-50 text-amber-700 border-amber-200",
+    name: "Aleyna Okumuş",
+    department:"Başkan Yardımcısı",
+    email: "aleynaokumus000@gmail.com",
+    image: "/yonetim/aleynaokumus.png",
+    initials: "AO",
   },
 ];
 
+const departmanBaskanlari = [
+  {
+    name: "Hayal Aktaş",
+    department: "Eğitim ve Sosyal Sorumluluk Departmanı Başkanı",
+    email: "hayalyaktas@gmail.com",
+    image: "/yonetim/hayalaktas.png",
+    initials: "HA",
+  },
+  {
+    name: "Sıla Kaya",
+    department: "Mali İşler ve Sponsorluk Departmanı Başkanı",
+    email: "sila.kaya0354@gmail.com",
+    image: "/yonetim/silakaya.png",
+    initials: "SK",
+  },
+  {
+    name: "Irmak Paköz",
+    department: "Sosyal Medya ve Tanıtım Departmanı Başkanı",
+    email: "vpakoz.6516@gmail.com",
+    image: "/yonetim/irmakpakoz.png",
+    initials: "IP",
+  },
+  {
+    name: "Beyza Bakar", 
+    department: "İdari İşler ve İnsan Kaynakları Departmanı Başkanı",
+    email: "beyzabakar34@gmail.com",
+    image: "/yonetim/beyzabakar.png",
+    initials: "BB",
+  },
+];
+
+const denetimBaskani = {
+  name: "Azra Özçelik", 
+  desc: "Denetim Kurulu Başkanı",
+  email: "ozcelikazra192@gmail.com",
+  initials: "AÖ",
+};
+
+export const metadata = {
+  title: "Yönetim Kurulu | ESOGÜ Uluslararası İlişkiler Kulübü",
+  description: "ESOGÜ Uluslararası İlişkiler Kulübü Yönetim Kurulu ve Departman Liderleri.",
+};
+
+function MemberCard({ member }) {
+  return (
+    <div className="w-full bg-white rounded-2xl border border-slate-200/85 overflow-hidden shadow-2xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100 flex items-center justify-center">
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 flex flex-col items-center justify-center gap-1.5">
+            <span className="text-2xl font-extrabold text-[#0c2340]/40 tracking-wider">
+              {member.initials}
+            </span>
+            <span className="text-[10px] text-slate-400 font-medium">Fotoğraf Yakında</span>
+          </div>
+        )}
+
+        
+      </div>
+
+      <div className="p-3.5 flex flex-col justify-between grow">
+        <div>
+          <h3 className="font-extrabold text-[#0c2340] transition-colors duration-200 group-hover:text-blue-600 text-lg sm:text-xl leading-snug">
+            {member.name}
+          </h3>
+          {member.department && (
+            <p className="text-[14px] text-slate-500 font-medium mt-0.5 leading-tight">
+              {member.department}
+            </p>
+          )}
+        </div>
+
+        {member.email && (
+          <a
+            href={`mailto:${member.email}`}
+            className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-slate-600 hover:text-blue-600 transition-colors pt-2 border-t border-slate-100 truncate"
+          >
+            <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span className="truncate">{member.email}</span>
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function YonetimPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
-      {/* Başlık ve Slogan */}
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          ESOGÜ UİK
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-black text-[#0c2340] mt-3 tracking-tight">
-          Yönetim Kurulu
-        </h1>
-        <p className="text-slate-500 mt-3 text-base sm:text-lg">
-          Kulübümüzü yöneten ekip ile tanışın.
-        </p>
-      </div>
+    <div className="min-h-screen bg-slate-50/70 py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* ÜST BAŞLIK */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0c2340] tracking-tight">
+            Yönetim Kurulu
+          </h1>
+          <p className="text-base sm:text-xl font-semibold text-slate-600 mt-4 leading-snug max-w-2xl mx-auto">
+            Kulübümüzün vizyonunu hayata geçiren, etkinlik ve projelerimizi koordine eden yönetim kadromuz.
+          </p>
+        </div>
 
-      {/* 1. SEVİYE: Genel Başkan & Başkan Yardımcısı */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {/* Genel Başkan */}
-        <div className="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
-          <div>
-            <div className="flex items-center gap-4 mb-5">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#0c2340] to-blue-700 text-white font-extrabold text-xl flex items-center justify-center shadow-xs">
-                HK
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-100">
-                  Genel Başkan
-                </span>
-                <h3 className="text-2xl font-extrabold text-[#0c2340] mt-1">
-                  Havva Kandak
-                </h3>
-              </div>
-            </div>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-              
-            </p>
-          </div>
-
-          <div className="pt-4 border-t border-slate-100">
-            <a
-              href="mailto:havvakandak@gmail.com"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors"
-            >
-              <span>✉️</span>
-              <span>havvakandak@hotmail.com</span>
-            </a>
+        {/* 1. BÖLÜM: BAŞKANLAR */}
+        <div className="mb-14 sm:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-xl mx-auto">
+            {baskanlar.map((baskan, idx) => (
+              <MemberCard key={idx} member={baskan} />
+            ))}
           </div>
         </div>
 
-        {/* Başkan Yardımcısı */}
-        <div className="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
-          <div>
-            <div className="flex items-center gap-4 mb-5">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#0c2340] to-blue-600 text-white font-extrabold text-xl flex items-center justify-center shadow-xs">
-                AO
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-md border border-indigo-100">
-                  Başkan Yardımcısı
-                </span>
-                <h3 className="text-2xl font-extrabold text-[#0c2340] mt-1">
-                  Aleyna Okumuş
-                </h3>
-              </div>
-            </div>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-              
-            </p>
+        {/* 2. BÖLÜM: DEPARTMAN LİDERLERİ (Klasik Yan Yana 4'lü Düzen) */}
+        <div className="mb-16 sm:mb-24">
+          <div className="text-center mb-8 sm:mb-12">
+           
+            <h2 className="text-xl sm:text-3xl font-black text-[#0c2340] inline-block tracking-tight">
+              Departman Başkanları
+            </h2>
           </div>
 
-          <div className="pt-4 border-t border-slate-100">
-            <a
-              href="mailto:aleynaokumus@gmail.com"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors"
-            >
-              <span>✉️</span>
-              <span>aleynaokumus000@gmail.com
-</span>
-            </a>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {departmanBaskanlari.map((dep, idx) => (
+              <MemberCard key={idx} member={dep} />
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* 2. SEVİYE: Departman Başkanları */}
-      <div className="mb-16">
-        <h2 className="text-xl sm:text-2xl font-extrabold text-[#0c2340] mb-6 flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-          Departman Başkanları
-        </h2>
+{/* 3. BÖLÜM: DENETİM KURULU */}
+        <div className="pt-4 sm:pt-8">
+          <div className="text-center mb-6">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#0c2340]">
+              Denetim Organı
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {departmentHeads.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 border border-slate-150 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm mb-4 border ${item.avatarBg}`}
-                >
-                  {item.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <h3 className="font-extrabold text-lg text-[#0c2340] mb-1.5 group-hover:text-blue-600 transition-colors">
-                  {item.name}
-                </h3>
-                <p className="text-slate-500 text-xs sm:text-sm leading-snug mb-5">
-                  {item.role}
-                </p>
-              </div>
+          <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-sm max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+            {/* Eski Tarz: Düz Lacivert Zemin Üzerine Beyaz "AÖ" Harfi */}
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl tracking-wider shadow-xs shrink-0">
+              {denetimBaskani.initials}
+            </div>
 
-              <div className="pt-3 border-t border-slate-100">
+            {/* Bilgiler */}
+            <div className="min-w-0 flex-1">
+              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 mb-1.5">
+                {denetimBaskani.role}
+              </span>
+              <h3 className="font-extrabold text-base sm:text-lg text-[#0c2340] leading-tight">
+                {denetimBaskani.name}
+              </h3>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                {denetimBaskani.desc}
+              </p>
+
+
+              {/* Mail: Normalde gri, hover olunca mavi */}
+              {denetimBaskani.email && (
                 <a
-                  href={`mailto:${item.email}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-blue-600 transition-colors truncate max-w-full"
+                  href={`mailto:${denetimBaskani.email}`}
+                  className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-blue-600 transition-colors font-medium"
                 >
-                  <span>✉️</span>
-                  <span className="truncate">{item.email}</span>
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <span>{denetimBaskani.email}</span>
                 </a>
-              </div>
+              )}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 3. SEVİYE: Denetim Kurulu */}
-      <div>
-        <h2 className="text-xl sm:text-2xl font-extrabold text-[#0c2340] mb-6 flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-slate-400" />
-          Denetim Kurulu
-        </h2>
-
-        <div className="max-w-md bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-          <div>
-            <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 font-bold flex items-center justify-center border border-slate-200">
-                AÖ
-              </div>
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-                  Denetim Kurulu Başkanı
-                </span>
-                <h3 className="text-lg font-extrabold text-[#0c2340] mt-0.5">
-                  Azra Özçelik
-                </h3>
-              </div>
-            </div>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-              
-            </p>
-          </div>
-
-          <div className="pt-3 border-t border-slate-100">
-            <a
-              href="mailto:azraozcelik@gmail.com"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-blue-600 transition-colors"
-            >
-              <span>✉️</span>
-              <span>ozcelikazra192@gmail.com</span>
-            </a>
           </div>
         </div>
+
       </div>
     </div>
   );
