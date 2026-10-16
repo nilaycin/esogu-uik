@@ -30,25 +30,8 @@ export default function SponsorsPage() {
           </p>
         </div>
 
-        {/* 2. GÜVEN & İSTATİSTİK BANDI */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-16 max-w-4xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-xs border border-slate-200/80 rounded-2xl p-4 sm:p-5 text-center shadow-2xs">
-            <p className="text-2xl sm:text-3xl font-black text-[#0c2340]">18+</p>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Destekçi Marka</p>
-          </div>
-          <div className="bg-white/80 backdrop-blur-xs border border-slate-200/80 rounded-2xl p-4 sm:p-5 text-center shadow-2xs">
-            <p className="text-2xl sm:text-3xl font-black text-blue-600">3000+</p>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Ulaşılan Öğrenci</p>
-          </div>
-          <div className="bg-white/80 backdrop-blur-xs border border-slate-200/80 rounded-2xl p-4 sm:p-5 text-center shadow-2xs">
-            <p className="text-2xl sm:text-3xl font-black text-[#0c2340]">20+</p>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Yıllık Etkinlik</p>
-          </div>
-          <div className="bg-white/80 backdrop-blur-xs border border-slate-200/80 rounded-2xl p-4 sm:p-5 text-center shadow-2xs">
-            <p className="text-2xl sm:text-3xl font-black text-blue-600">%100</p>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Öğrenci Odaklı</p>
-          </div>
-        </div>
+
+
 
         {/* 3. LOGO VİTRİNİ (BENTO KARE KARTLAR) */}
         <div className="bg-white/60 backdrop-blur-md border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-sm">
@@ -70,16 +53,16 @@ export default function SponsorsPage() {
         </div>
 
         {/* 4. SADE & BEYAZ İLETİŞİM ALANI */}
-        <div className="mt-14 sm:mt-20 bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 text-center shadow-xs max-w-2xl mx-auto">
-          <h3 className="text-lg sm:text-2xl font-bold text-[#0c2340] mb-2.5">
+        <div className="mt-14 sm:mt-20 bg-white border border-slate-200/90 rounded-2xl px-8 py-6 text-center shadow-xs">
+          <h3 className="text-base sm:text-lg font-bold text-[#0c2340] mb-1.5">
             Birlikte Neler Yapabiliriz?
           </h3>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 max-w-md mx-auto">
+          <p className="text-slate-500 text-xs sm:text-sm mb-4">
             Etkinliklerimizde yer almak veya kulübümüze sponsor olmak için bizimle iletişime geçin.
           </p>
           <Link
             href="/iletisim"
-            className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full bg-[#0c2340] hover:bg-blue-900 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm hover:shadow"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0c2340] hover:bg-blue-900 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm hover:shadow"
           >
             <span>İletişime Geç</span>
             <span>→</span>
