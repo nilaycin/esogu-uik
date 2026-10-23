@@ -49,11 +49,11 @@ const departmanBaskanlari = [
   },
 ];
 
-const denetimBaskani = {
-  name: "Azra Özçelik", 
-  desc: "Denetim Kurulu Başkanı",
-  email: "ozcelikazra192@gmail.com",
-  initials: "AÖ",
+const teknikSorumlu = {
+  name: "Nilay Çin",
+  role: "Teknik Sorumlu",
+  email: "nilayycinn@gmail.com",
+  initials: "NÇ",
 };
 
 export const metadata = {
@@ -153,43 +153,30 @@ export default function YonetimPage() {
           </div>
         </div>
 
-{/* 3. BÖLÜM: DENETİM KURULU */}
+{/* 3. BÖLÜM: TEKNİK SORUMLU */}
         <div className="pt-4 sm:pt-8">
-          <div className="text-center mb-6">
-            <h2 className="text-lg sm:text-2xl font-bold text-[#0c2340]">
-              Denetim Organı
-            </h2>
-          </div>
-
           <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-sm max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-            {/* Eski Tarz: Düz Lacivert Zemin Üzerine Beyaz "AÖ" Harfi */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl tracking-wider shadow-xs shrink-0">
-              {denetimBaskani.initials}
+              {teknikSorumlu.initials}
             </div>
 
-            {/* Bilgiler */}
-            <div className="min-w-0 flex-1">
-              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 mb-1.5">
-                {denetimBaskani.role}
-              </span>
-              <h3 className="font-extrabold text-base sm:text-lg text-[#0c2340] leading-tight">
-                {denetimBaskani.name}
+            <div className="min-w-0 flex-1 flex flex-col justify-center">
+              <h3 className="font-extrabold text-lg text-[#0c2340] leading-tight">
+                {teknikSorumlu.name}
               </h3>
-              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                {denetimBaskani.desc}
+              <p className="text-sm text-slate-500 font-medium mt-0.5">
+                {teknikSorumlu.role}
               </p>
 
-
-              {/* Mail: Normalde gri, hover olunca mavi */}
-              {denetimBaskani.email && (
+              {teknikSorumlu.email && (
                 <a
-                  href={`mailto:${denetimBaskani.email}`}
-                  className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-blue-600 transition-colors font-medium"
+                  href={`mailto:${teknikSorumlu.email}`}
+                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-slate-600 hover:text-blue-600 transition-colors pt-2 border-t border-slate-100 w-full font-medium"
                 >
                   <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
-                  <span>{denetimBaskani.email}</span>
+                  <span>{teknikSorumlu.email}</span>
                 </a>
               )}
             </div>

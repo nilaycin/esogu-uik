@@ -16,22 +16,20 @@ const events = [
     location: "ESOGÜ",
   },*/
   {
-    day: "16",
-    month: "EKİM",
-    year: "2026",
-    title: "Sinema Gecesi (No Man's Land)",
-    time: "18.30",
-    location: "Teras Cafe",
-    
-  },
-  {
     day: "26",
     month: "EKİM",
     year: "2026",
-    title: "Kedi evi Boyama ve Sağlamlaştırma",
+    title: "Kedi Evi Boyama ve Sağlamlaştırma",
     time: "Detaylar yakında!",
     location: "Detaylar yakında!",
   },
+  /*{
+    day: "27",
+    month: "EKİM",
+    year: "2026",
+    title: "Mailing Süreci Eğitimi (Eğitim Sosyal Sorumluluk Departmanı & İdari İşler ve İnsan Kaynakları)",
+    time: "Detaylar yakında!",
+  },*/
 ];
 
 export default function EtkinliklerPage() {
@@ -89,10 +87,14 @@ export default function EtkinliklerPage() {
                   <span className="flex items-center gap-1">
                     <span>🕒</span> {event.time}
                   </span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1">
-                    <span>📍</span> {event.location}
-                  </span>
+                  {event.location && (
+                    <>
+                      <span>•</span>
+                      <span className="flex items-center gap-1">
+                        <span>📍</span> {event.location}
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
