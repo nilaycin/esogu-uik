@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const sponsors = Array.from({ length: 18 }, (_, i) => ({
+const sponsors = Array.from({ length: 20 }, (_, i) => ({
   id: i + 1,
   logo: `/sponsorlar/sponsor-${i + 1}.png`,
 }));
@@ -35,11 +35,11 @@ export default function SponsorsPage() {
 
         {/* 3. LOGO VİTRİNİ (BENTO KARE KARTLAR) */}
         <div className="bg-white/60 backdrop-blur-md border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-sm">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
             {sponsors.map((sponsor) => (
               <div
                 key={sponsor.id}
-                className="group relative aspect-square bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-5 flex items-center justify-center shadow-2xs hover:shadow-xl hover:border-blue-400 hover:-translate-y-1 transition-all duration-300"
+                className="group relative aspect-square bg-white rounded-2xl border border-white p-4 sm:p-5 flex items-center justify-center shadow-2xs hover:shadow-xl hover:border-blue-400 hover:-translate-y-1 transition-all duration-300"
               >
                 <img
                   src={sponsor.logo}

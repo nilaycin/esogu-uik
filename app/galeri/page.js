@@ -4,6 +4,17 @@ import { useState } from "react";
 
 const eventGroups = [
   {
+    id: "kedi-boyama",
+    title: "Kedi Evi Boyama ve Sağlamlaştırma Etkinliğimizden Fotoğraflar",
+    date: "Ekim 2026",
+    photos: [
+      "/galeri/kediboya-1.jpg",
+      "/galeri/kediboya-2.jpg",
+      "/galeri/kediboya-3.jpg",
+      "/galeri/kediboya-4.jpg",
+    ],
+  },
+  {
     id: "sinema-gecesi",
     title: "Sinema Gecesi : No Man's Land",
     date: "Ekim 2026",

@@ -29,7 +29,7 @@ const events = [
     year: "2026",
     title: "Mailing Süreci Eğitimi (Eğitim Sosyal Sorumluluk Departmanı & İdari İşler ve İnsan Kaynakları)",
     time: "Detaylar yakında!",
-  },*/
+  },*/ 
 ];
 
 export default function EtkinliklerPage() {
