@@ -1,9 +1,11 @@
 import Link from "next/link";
 
-const sponsors = Array.from({ length: 20 }, (_, i) => ({
-  id: i + 1,
-  logo: `/sponsorlar/sponsor-${i + 1}.png`,
-}));
+const sponsors = Array.from({ length: 20 }, (_, i) => i + 1)
+  .filter((id) => id !== 8 && id !== 11)
+  .map((id) => ({
+    id,
+    logo: `/sponsorlar/sponsor-${id}.png`,
+  }));
 
 export const metadata = {
   title: "Sponsorlarımız | ESOGÜ Uluslararası İlişkiler Kulübü",
@@ -35,7 +37,7 @@ export default function SponsorsPage() {
 
         {/* 3. LOGO VİTRİNİ (BENTO KARE KARTLAR) */}
         <div className="bg-white/60 backdrop-blur-md border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-sm">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-5">
             {sponsors.map((sponsor) => (
               <div
                 key={sponsor.id}
