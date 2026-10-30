@@ -56,6 +56,13 @@ const teknikSorumlu = {
   initials: "NÇ",
 };
 
+const denetim = {
+  name: "Samet Gençer",
+  role: "Denetim Kurulu Başkanı",
+  email: "samtgncer@gmail.com",
+  initials: "SG",
+};
+
 export const metadata = {
   title: "Yönetim Kurulu | ESOGÜ Uluslararası İlişkiler Kulübü",
   description: "ESOGÜ Uluslararası İlişkiler Kulübü Yönetim Kurulu ve Departman Liderleri.",
@@ -153,33 +160,62 @@ export default function YonetimPage() {
           </div>
         </div>
 
-{/* 3. BÖLÜM: TEKNİK SORUMLU */}
+{/* 3. BÖLÜM: DENETİM & TEKNİK SORUMLU */}
         <div className="pt-4 sm:pt-8">
-          <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-sm max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl tracking-wider shadow-xs shrink-0">
-              {teknikSorumlu.initials}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto items-stretch">
+
+            {/* Denetim */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-sm flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl tracking-wider shadow-xs shrink-0">
+                {denetim.initials || "—"}
+              </div>
+              <div className="min-w-0 flex-1 flex flex-col justify-center">
+                <h3 className="font-extrabold text-lg text-[#0c2340] leading-tight">
+                  {denetim.name || "Yakında"}
+                </h3>
+                <p className="text-sm text-slate-500 font-medium mt-0.5">
+                  {denetim.role}
+                </p>
+                {denetim.email && (
+                  <a
+                    href={`mailto:${denetim.email}`}
+                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-slate-600 hover:text-blue-600 transition-colors pt-2 border-t border-slate-100 w-full font-medium"
+                  >
+                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span>{denetim.email}</span>
+                  </a>
+                )}
+              </div>
             </div>
 
-            <div className="min-w-0 flex-1 flex flex-col justify-center">
-              <h3 className="font-extrabold text-lg text-[#0c2340] leading-tight">
-                {teknikSorumlu.name}
-              </h3>
-              <p className="text-sm text-slate-500 font-medium mt-0.5">
-                {teknikSorumlu.role}
-              </p>
-
-              {teknikSorumlu.email && (
-                <a
-                  href={`mailto:${teknikSorumlu.email}`}
-                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-slate-600 hover:text-blue-600 transition-colors pt-2 border-t border-slate-100 w-full font-medium"
-                >
-                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                  <span>{teknikSorumlu.email}</span>
-                </a>
-              )}
+            {/* Teknik Sorumlu */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-sm flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl tracking-wider shadow-xs shrink-0">
+                {teknikSorumlu.initials}
+              </div>
+              <div className="min-w-0 flex-1 flex flex-col justify-center">
+                <h3 className="font-extrabold text-lg text-[#0c2340] leading-tight">
+                  {teknikSorumlu.name}
+                </h3>
+                <p className="text-sm text-slate-500 font-medium mt-0.5">
+                  {teknikSorumlu.role}
+                </p>
+                {teknikSorumlu.email && (
+                  <a
+                    href={`mailto:${teknikSorumlu.email}`}
+                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-slate-600 hover:text-blue-600 transition-colors pt-2 border-t border-slate-100 w-full font-medium"
+                  >
+                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span>{teknikSorumlu.email}</span>
+                  </a>
+                )}
+              </div>
             </div>
+
           </div>
         </div>
 
